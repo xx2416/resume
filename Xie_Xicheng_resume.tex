@@ -1,0 +1,79 @@
+
+\documentclass[11pt,a4paper,sans]{moderncv}
+\moderncvstyle{classic}
+\moderncvcolor{blue}
+
+\usepackage[scale=0.75]{geometry}
+\usepackage{multicol}
+
+% Personal info
+\name{Xicheng}{Xie}
+\phone[mobile]{+1~(336)~448~8191}
+\email{xicheng.xie@northwestern.edu}
+\social[linkedin]{xx0224}
+\address{}{Evanston, IL}{USA}
+
+\begin{document}
+
+\makecvtitle
+
+% Education
+\section{Education}
+\cventry{09/2024 -- Present}{Ph.D. in Biostatistics}{Northwestern University, Feinberg School of Medicine}{Evanston, IL}{}{}
+\cventry{09/2022 -- 05/2024}{M.S. in Biostatistics}{Columbia University, Mailman School of Public Health}{New York, NY}{}{}
+\cventry{09/2018 -- 06/2022}{B.S. in Environmental Science}{Shanghai Jiao Tong University}{Shanghai, China}{}{}
+
+% Skills
+\section{Technical Skills}
+\cvitem{Programming}{Python (TensorFlow, PyTorch, Keras, Scikit-learn, NumPy, Pandas, Matplotlib), SQL, R (glmnet, caret, dplyr, MASS, RShiny, Bioconductor), MATLAB, SAS, Shell/SSH}
+\cvitem{Methodologies}{Machine Learning, Reinforcement Learning, Deep Learning, Bayesian Statistics, Survival Analysis, Longitudinal Analysis, Time-Series Analysis, Missing Data Imputation}
+\cvitem{Tools \& Platforms}{MySQL, PyCharm, Jupyter Notebook, RStudio, Microsoft Azure, Git, AWS, Slurm}
+
+% Experience
+\section{Experience}
+\cventry{05/2024 -- 09/2024}{Data Scientist}{IQVIA}{Shanghai, China}{}{
+\begin{itemize}
+    \item Developed pipelines to scrape influenza data from China CDC and retrieve Baidu Index data.
+    \item Engineered features and trained time-series models (SARIMAX, LSTM, XGBoost), improving RMSE by 17\%.
+\end{itemize}}
+
+\cventry{03/2023 -- 04/2024}{Data Analyst}{Columbia University}{New York, NY}{}{
+\begin{itemize}
+    \item Built Python HPC pipelines to transform 40 years of US temperature data into a longitudinal database.
+    \item Developed Bayesian models to forecast heat stress disparities at the census-tract level.
+    \item Created RShiny apps visualizing extreme heat and hurricane mortality, increasing engagement by 12\%.
+\end{itemize}}
+
+\cventry{01/2022 -- 09/2022}{Applied Machine Learning Intern}{Fresenius Medical Care}{Shanghai, China}{}{
+\begin{itemize}
+    \item Analyzed clinical data from 600+ dialysis patients using Azure and Python pipelines.
+    \item Trained Random Forest and S3VM models to classify conditions with 89.72\% accuracy.
+\end{itemize}}
+
+% Projects
+\section{Projects}
+\cvitem{NYC Restaurant Recommendations}{
+\begin{itemize}
+    \item Extracted Yelp and inspection data for 8,000+ restaurants, built a Shiny App for custom recommendations.
+\end{itemize}}
+
+\cvitem{Retail Pharmacy Forecasting}{
+\begin{itemize}
+    \item Trained LSTM networks and Bayesian models for SKU sales forecasting, improving accuracy by 13.7\%.
+    \item Clustered SKUs with Fuzzy C-Means to improve inventory turnover by 12\%.
+\end{itemize}}
+
+\cvitem{Multi-Omics Cancer Subtyping}{
+\begin{itemize}
+    \item Developed spectral clustering on TCGA data for KIRC, GBM, LAML; Cox p-values all $<$ 0.01.
+\end{itemize}}
+
+% Publications
+\section{Publications}
+\cvitem{In Review}{Meltzer, G.Y., \textbf{Xie, X.C.}, et al. Disruption to Test Scores after Hurricanes. \emph{PNAS}.}
+\cvitem{2022}{\textbf{Xie, X.C.}, et al. ssDNA aptamers for metamitron detection. \emph{Analytical Methods}, 14(31):3021--32.}
+\cvitem{2022}{\textbf{Xie, X.C.}, et al. Aptamer for netilmicin detection. \emph{Talanta}, 250.}
+\cvitem{2021}{\textbf{Xie, X.C.}, et al. Tebuconazole detection via aptamer-gold aggregation. \emph{Aust. J. Chem.}, 74(12):838--46.}
+\cvitem{2022}{\textbf{Xie, X.C.}, et al. Carbendazim assay via SYBR Green I. \emph{Aust. J. Chem.}, 75(5):345--52.}
+
+\end{document}
