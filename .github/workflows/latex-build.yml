@@ -1,0 +1,26 @@
+name: Build LaTeX Resume
+
+on:
+  push:
+    paths:
+      - '**.tex'
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v3
+
+    - name: Set up LaTeX
+      uses: dante-ev/latex-action@v2
+      with:
+        root_file: Xie_Xicheng_resume.tex
+
+    - name: Upload PDF artifact
+      uses: actions/upload-artifact@v4
+      with:
+        name: resume-pdf
+        path: Xie_Xicheng_resume.pdf
