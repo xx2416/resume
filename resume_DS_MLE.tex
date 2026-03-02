@@ -1,0 +1,81 @@
+\documentclass[11pt,letterpaper,sans]{moderncv}
+\moderncvstyle{classic}
+\moderncvcolor{blue}
+\usepackage{tabularx}
+\usepackage{ragged2e}
+\usepackage[top=0.65in, bottom=0.65in, left=0.4in, right=0.4in]{geometry} 
+\usepackage{multicol}
+\usepackage{academicons}
+\setlength{\hintscolumnwidth}{0.16\textwidth}
+\setlength{\separatorcolumnwidth}{0.02\textwidth}
+
+
+% Personal info
+\name{Xicheng}{Xie}
+\phone[mobile]{+1~(336)~448~8191}
+\email{xicheng.xie@northwestern.edu}
+\social[linkedin]{xx0224}
+\social[github]{xx2416}
+\address{}{Chicago, IL}{USA}
+\extrainfo{\href{https://scholar.google.com/citations?user=Hp9T8HgAAAAJ}{\aiGoogleScholar\ Google Scholar}}
+
+
+\begin{document}
+
+% --- before \makecvtitle ---
+\title{Biostatistics PhD student · 4 years in statistical modeling \& ML (time series, Bayesian, clustering) \\ Production Spark/Databricks · MLOps with MLflow/Docker on AWS · Terabyte-scale HPC}
+
+% make the title line compact/smaller
+\renewcommand*{\titlefont}{\small\normalfont}
+% (optional) slightly reduce space after the title block
+\newcommand{\tighttitlevspace}{\vspace*{-0.6\baselineskip}}
+
+\makecvtitle
+\tighttitlevspace
+\vspace*{-1.2\baselineskip}
+
+% Education
+\section{Education}
+\cventry{09/2024 -- Present}{Ph.D. in Biostatistics}{Northwestern University, Feinberg School of Medicine}{Chicago, IL}{}{}
+\cventry{09/2022 -- 05/2024}{M.S. in Biostatistics}{Columbia University, Mailman School of Public Health}{New York, NY}{}{}
+\cventry{09/2018 -- 06/2022}
+{B.S. in Environmental Science}
+{Shanghai Jiao Tong University}
+{Shanghai, China}{}{}
+
+% Skills
+\section{Technical Skills}
+\cvitem{Programming}{Python, R, SQL, Scala, Bash; PyTorch, TensorFlow/Keras, scikit-learn, Transformers (Hugging Face)}
+\cvitem{Platforms \& MLOps}{Databricks; Spark (PySpark/Scala); SQL (MySQL, PostgreSQL); AWS, Azure; MLflow, Docker; Git/GitHub/Bitbucket; HPC (Slurm); CI/CD (Bamboo)}
+\cvitem{Core Methods}{Time series (ARIMA/SARIMAX, LSTM/Transformers); Bayesian modeling; Recommending system;
+Supervised (XGBoost, Elastic Net); Unsupervised ; Representation(Autoencoders/VAE)}
+
+
+
+% Experience
+\section{Experiences}
+
+\cventry{06/2025 -- 09/2025}{Data Science Intern}{Publicis Groupe - Epsilon}{Chicago, IL}{}{\begin{itemize}
+    \item Built a CI/CD-integrated MLOps pipeline (Databricks SDK + \textbf{MLflow}) that automated Spark JAR dev job runs and creates a version-controlled run history (artifacts/configs/metrics logged to MLflow).
+  \item Developed Databricks/Spark ETL pipelines to process and update the \textbf{identity graph} at scale (\textbf{1.5B+} individuals; \textbf{12.2B+} child IDs).
+  \item Implemented identity-graph output data-quality \& drift checks (coverage, distincts, link density, recency); logged diagnostics to \textbf{MLflow} for dev–prod comparison and regression detection.
+\end{itemize}}
+\vspace{2pt}
+\cventry{02/2024 -- 09/2024}{Data Scientist}{IQVIA}{Shanghai, China}{}{\begin{itemize}
+    \item Built pipelines to extract influenza data from China CDC reports and Baidu Index data, creating a cleaned weekly time-series dataset (2012–2024).
+    \item Engineered time-series features (lags, windows), performed dimensionality reduction, and applied model-based feature selection.
+    \item Trained and tuned \textbf{SARIMAX, LSTM, LightGBM, and XGBoost} to predict ILI rates; SARIMAX improved short-term RMSE by 17\% and accuracy by 23\%.
+\end{itemize}}
+
+\vspace{2pt}
+\cventry{03/2023 -- 01/2024}{Biostatistician}{Columbia University}{New York, NY}{}{\begin{itemize}
+    \item Processed 40 years of US temperature data (12.7 GB) into a 500 MB longitudinal database on extreme heat events using Python and HPC.
+    \item Developed Bayesian models to evaluate and forecast heat stress variations at the census-tract level nationwide, identifying vulnerable areas and groups.
+    \item Built 2 interactive \textbf{RShiny} apps visualizing extreme heat and hurricane mortality, increasing climate report engagement of Grist by 12\%.
+\end{itemize}}
+
+\section{Projects}
+\cvitem{Retail Pharmacy Forecasting}{Built SKU-level forecasting for 11 pharmacies using LSTM (TensorFlow) and Bayesian models (PyMC3) on 6 years of daily data; engineered multi-season lag \& rolling-window features; error \textbf{↓13.7\%} vs. baseline; Fuzzy C-Means demand segments lifted inventory turnover \textbf{12\%}.}
+\cvitem{NYC Restaurant Recommender}{Preprocessed 8k+ Yelp/DOHMH records $\rightarrow$ \textbf{6,943} restaurants; hybrid recommender (content + K-means, cosine similarity); deployed R Shiny (GeoSearch) for location-aware recommendations.}
+
+\end{document}

@@ -1,16 +1,22 @@
 \documentclass[11pt,a4paper,sans]{moderncv}
 \moderncvstyle{classic}
 \moderncvcolor{blue}
-
-\usepackage[top=0.80in, bottom=0.80in, left=0.80in, right=0.80in]{geometry} 
+\usepackage{tabularx}
+\usepackage{ragged2e}
+\usepackage[top=0.65in, bottom=0.65in, left=0.65in, right=0.65in]{geometry} 
 \usepackage{multicol}
+\setlength{\hintscolumnwidth}{0.13\textwidth}
+
 
 % Personal info
 \name{Xicheng}{Xie}
 \phone[mobile]{+1~(336)~448~8191}
 \email{xicheng.xie@northwestern.edu}
 \social[linkedin]{xx0224}
-\address{}{Evanston, IL}{USA}
+\social[github]{xx2416}
+\address{}{Chicago, IL}{USA}
+
+
 
 \begin{document}
 
@@ -18,18 +24,31 @@
 
 % Education
 \section{Education}
-\cventry{09/2024 -- Present}{Ph.D. in Biostatistics}{Northwestern University, Feinberg School of Medicine}{Evanston, IL}{}{}
+\cventry{09/2024 -- Present}{Ph.D. in Biostatistics}{Northwestern University, Feinberg School of Medicine}{Chicago, IL}{}{}
 \cventry{09/2022 -- 05/2024}{M.S. in Biostatistics}{Columbia University, Mailman School of Public Health}{New York, NY}{}{}
-\cventry{09/2018 -- 06/2022}{B.S. in Environmental Science}{Shanghai Jiao Tong University}{Shanghai, China}{}{}
+\cventry{09/2018 -- 06/2022}
+{B.S. in Environmental Science}
+{Shanghai Jiao Tong University \textit{(Top \textbf{4} university in China)}}
+{Shanghai, China}{}{}
 
 % Skills
 \section{Technical Skills}
-\cvitem{Programming}{Python (TensorFlow, PyTorch, Keras, Scikit-learn, NumPy, Pandas, Matplotlib), SQL, R (glmnet, caret, dplyr, MASS, RShiny, Bioconductor), MATLAB, SAS, Shell/SSH}
-\cvitem{Methodologies}{Machine Learning, Reinforcement Learning, Bayesian Statistics, Survival Analysis, Longitudinal Analysis, Time-Series Analysis, Missing Data Imputation, Prompt Tuning}
-\cvitem{Tools \& Platforms}{MySQL, PyCharm, Jupyter Notebook, RStudio, Microsoft Azure, Git, AWS, Slurm}
+\cvitem{Programming}{Python (PyTorch, TensorFlow, Keras, Scikit-learn, NumPy, Pandas, Matplotlib, Seaborn), 
+R (glmnet, caret, dplyr, MASS, Shiny, Bioconductor, ggplot2), SQL, MATLAB, SAS, Shell/SSH}
+
+\vspace{6pt}
+\cvitem{Methodologies}{
+Machine Learning (supervised, unsupervised, reinforcement learning), Deep Learning (CNN, RNN, LSTM, Transformers), Bayesian Statistics, 
+Statistical Inference, Causal Inference, Time-Series Forecasting, Survival Analysis, Longitudinal Data Analysis, Missing Data Imputation, Optimization, A/B Testing
+}
+\vspace{6pt}
+\cvitem{Tools \& Platforms}{
+MySQL, PostgreSQL, PyCharm, Jupyter Notebook/Lab, RStudio, AWS, Microsoft Azure, Git/GitHub, Slurm/HPC, Docker, Linux/Unix
+}
+
 
 % Experience
-\section{Experience}
+\section{Experiences}
 
 \cventry{02/2024 -- 09/2024}{Data Scientist}{IQVIA}{Shanghai, China}{}{
 \begin{itemize}
@@ -38,15 +57,15 @@
     \item Trained SARIMAX, LSTM, LightGBM, and XGBoost to predict ILI rates; SARIMAX improved short-term RMSE by 17\% and accuracy by 23\%.
 \end{itemize}
 }
-
+\vspace{12pt}
 \cventry{03/2023 -- 01/2024}{Data Analyst}{Columbia University}{New York, NY}{}{
 \begin{itemize}
     \item Processed 40 years of US temperature data (12.7 GB) into a 500 MB longitudinal database on extreme heat events using Python and HPC.
     \item Developed Bayesian models to evaluate and forecast heat stress variations at the census-tract level nationwide, identifying vulnerable areas and groups.
-    \item Built 2 interactive RShiny apps visualizing extreme heat and hurricane mortality, increasing climate report engagement by 12\%.
+    \item Built 2 interactive RShiny apps visualizing extreme heat and hurricane mortality, increasing climate report engagement of Grist by 12\%.
 \end{itemize}
 }
-
+\vspace{12pt}
 \cventry{01/2022 -- 09/2022}{Applied ML Engineer Intern}{Fresenius Medical Care}{Shanghai, China}{}{
 \begin{itemize}
     \item Analyzed clinical and hemodynamic data from 600+ dialysis patients using Azure and Python to identify patient patterns.
@@ -55,33 +74,35 @@
 \end{itemize}
 }
 
+\newpage
 % Projects
 \section{Projects}
 
 \cvitem{Retail Pharmacy Forecasting}{
 \begin{itemize}
-    \item Led a time-series forecasting project using LSTM (TensorFlow) and Bayesian models (PyMC3) on 6 years of SKU-level sales data across 11 retail pharmacies.
-    \item Engineered features from sequences of 1,095 days/SKU and achieved a 13.7\% improvement in forecasting accuracy over baseline.
-    \item Applied Fuzzy C-Means clustering on sales patterns and seasonality, increasing inventory turnover of new products by 12\%.
+    \item Forecasted SKU-level daily sales across 11 retail pharmacies using LSTM (TensorFlow) and Bayesian models (PyMC3) on 6 years of data.
+    \item Engineered time-series features from 1,095-day sequences per SKU; improved prediction accuracy by 13.7\% over baseline.
+    \item Applied Fuzzy C-Means clustering to segment SKUs by sales patterns and seasonality, increasing inventory turnover by 12\%.
 \end{itemize}}
 
 \cvitem{NYC Restaurant Recommendations}{
 \begin{itemize}
-    \item Scraped data from 8,000+ NYC restaurants on Yelp, merged with DOHMH inspection records, and cleaned 6,943 entries for analysis.
-    \item Built an R Shiny App displaying interactive maps, inspection grades, and custom restaurant recommendations based on user location and preferences.
+    \item Extracted and integrated real-time data from 8,000+ NYC restaurants (Yelp API, CSS scraping) with DOHMH inspection records; curated 6,943 clean entries.
+    \item Built a hybrid recommendation engine using content-based filtering and clustering (K-Means + cosine similarity) based on cuisine, price, inspection grade, and location.
+    \item Deployed an interactive R Shiny app with GeoSearch API for personalized, location-aware recommendations and inspection-aware filtering.
 \end{itemize}}
 
 \cvitem{Multi-Omics Cancer Subtyping}{
 \begin{itemize}
-    \item Developed a perturbation-based spectral clustering algorithm in R to subtype cancer patients using TCGA multi-omics data (mRNA, miRNA, DNA methylation).
-    \item Identified subtypes for KIRC, GBM, and LAML with significant survival differences (Cox p-values $<$ 0.01); clustering validated across 8 datasets (RI: 0.91, ARI: 0.78).
+    \item Developed a perturbation-based spectral clustering algorithm in R for subtyping TCGA patients using mRNA, miRNA, and DNA methylation data.
+    \item Identified biologically distinct subtypes for KIRC, GBM, and LAML with Cox survival p-values $<$ 0.01; validated clustering with RI = 0.91 and ARI = 0.78 across 8 benchmark datasets.
 \end{itemize}}
 
 
 % Publications
 \section{Publications}
 
-\noindent Lynch, V.D., Sullivan, J.A., Flores, A.B., \textbf{Xie, X.}, Aggarwal, S., Nethery, R.C., Kioumourtzoglou, M.-A., Nigra, A.E., Parks, R.M. (2025). \textit{Large floods drive changes in cause-specific mortality in the United States}. \textit{Nature Medicine}, \textbf{31}, 663–671. \href{https://doi.org/10.1038/s41591-024-03022-3}{https://doi.org/10.1038/s41591-024-03022-3}
+\noindent Lynch, V.D., Sullivan, J.A., Flores, A.B., \textbf{Xie, X.}, Aggarwal, S., Nethery, R.C., Kioumourtzoglou, M.-A., Nigra, A.E., Parks, R.M. (2025). \textit{Large floods drive changes in cause-specific mortality in the United States}. \textit{Nature Medicine}, \textbf{31}, 663–671. \href{https://doi.org/10.1038/s41591-024-03358-z}{https://doi.org/10.1038/s41591-024-03358-z}
 
 \medskip
 
@@ -94,18 +115,11 @@
 \medskip
 
 \noindent Yu, H., Pan, C.Q., Zhu, J.X., Shen, G.Q., Deng, Y., \textbf{Xie, X.C.}, Geng, X.Q., Wang, L.M. (2022). \textit{Selection and identification of a DNA aptamer for fluorescent detection of netilmicin}. \textit{Talanta}, \textbf{250}, 123708. \href{https://doi.org/10.1016/j.talanta.2022.123708}{https://doi.org/10.1016/j.talanta.2022.123708}
-
-\medskip
-
-\noindent \textbf{Xie, X.C.}, Li, L.Y., Wang, L.M., Pan, C.Q., Zhang, D.W., Shen, G.Q. (2021). \textit{Colourimetric detection of tebuconazole in aqueous solution based on an unmodified aptamer and the aggregation of gold nanoparticles}. \textit{Australian Journal of Chemistry}, \textbf{74}(12), 838–846. \href{https://doi.org/10.1071/ch21171}{https://doi.org/10.1071/ch21171}
-
 \medskip
 
 \noindent Shi, Y.Z., \textbf{Xie, X.C.}, Wang, L.M., Wang, L.Z., Li, L.Y., Yan, Z.Y., Shen, G.Q. (2022). \textit{Fluorescent assay for carbendazim determination using aptamer and SYBR Green I}. \textit{Australian Journal of Chemistry}, \textbf{75}(5), 345–352. \href{https://doi.org/10.1071/ch22001}{https://doi.org/10.1071/ch22001}
+\medskip
 
-
-
-
-
+\noindent \textbf{Xie, X.C.}, Li, L.Y., Wang, L.M., Pan, C.Q., Zhang, D.W., Shen, G.Q. (2021). \textit{Colourimetric detection of tebuconazole in aqueous solution based on an unmodified aptamer and the aggregation of gold nanoparticles}. \textit{Australian Journal of Chemistry}, \textbf{74}(12), 838–846. \href{https://doi.org/10.1071/ch21171}{https://doi.org/10.1071/ch21171}
 
 \end{document}
